@@ -8,14 +8,14 @@ import { PageHero } from '@/components/ui/PageHero';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'ZOENP Solutions services — technology solutions, IT support, network infrastructure, computer repair and more in Pompano Beach, FL.',
+    'ZOENP Solutions services, including technology solutions, IT support, network infrastructure, computer repair and more in Pompano Beach, FL.',
 };
 
 const MAIN_SERVICES = [
   {
     icon:  Monitor,
     title: 'Technology Solutions',
-    desc:  'End-to-end technology solutions tailored for businesses of all sizes — from hardware procurement to full infrastructure setup and consultation.',
+    desc:  'End-to-end technology solutions tailored for businesses of all sizes, from hardware procurement to full infrastructure setup and consultation.',
     items: ['Hardware Procurement', 'Software Licensing', 'System Integration', 'Tech Consulting'],
     coming: true,
   },
@@ -43,14 +43,14 @@ const MAIN_SERVICES = [
   {
     icon:  Wifi,
     title: 'Connectivity & ISP',
-    desc:  'Reliable connectivity solutions for homes and businesses — from ISP selection guidance to complete Wi-Fi coverage optimization.',
+    desc:  'Reliable connectivity solutions for homes and businesses, from ISP selection guidance to complete Wi-Fi coverage optimization.',
     items: ['ISP Consulting', 'Coverage Analysis', 'Signal Optimization', 'Mesh Networks'],
     coming: true,
   },
   {
     icon:  HardDrive,
     title: 'Hardware Sales',
-    desc:  'Quality-certified computers, laptops, peripherals and components — sourced from trusted suppliers and sold with full technical support.',
+    desc:  'Quality-certified computers, laptops, peripherals and components, sourced from trusted suppliers and sold with full technical support.',
     items: ['Desktops & Laptops', 'Peripherals', 'Components', 'Certified Refurbished'],
     coming: true,
   },
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           badge="What We Offer"
           title="Our"
           highlight="Services"
-          description="Comprehensive technology solutions backed by 27 years of expertise. From hardware sales to full network infrastructure — we've got you covered."
+          description="Comprehensive technology solutions backed by 27 years of expertise. From hardware sales to full network infrastructure, we've got you covered."
         />
 
         {/* ─── Coming Soon Banner ───────────────────────────────────────── */}
@@ -77,7 +77,7 @@ export default function ServicesPage() {
             <div>
               <p className="text-white font-semibold">We are expanding our portfolio.</p>
               <p className="text-gray-400 text-sm">
-                Stay tuned for updates — or{' '}
+                Stay tuned for updates, or{' '}
                 <Link href="/contact" className="text-brand-blue hover:text-brand-blue-light transition-colors font-medium">
                   contact us now
                 </Link>{' '}
@@ -162,7 +162,7 @@ export default function ServicesPage() {
               Need a Custom <span className="text-blue-gradient">Solution?</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-10">
-              Don&apos;t see exactly what you&apos;re looking for? Our team is ready to build a custom technology solution for your specific needs. Reach out — we love a good challenge.
+              Don&apos;t see exactly what you&apos;re looking for? Our team is ready to build a custom technology solution for your specific needs. Reach out. We love a good challenge.
             </p>
             <Link
               href="/contact"

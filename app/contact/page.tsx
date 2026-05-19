@@ -80,7 +80,7 @@ export default function ContactPage() {
                     <span className="text-blue-gradient">Help You.</span>
                   </h2>
                   <p className="text-gray-400 leading-relaxed">
-                    Whether you need immediate IT support, want to discuss a network project, or simply want to learn more about our services — reach out. We respond promptly.
+                    Whether you need immediate IT support, want to discuss a network project, or simply want to learn more about our services, reach out. We respond promptly.
                   </p>
                 </div>
 

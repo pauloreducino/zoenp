@@ -9,7 +9,7 @@ import { SITE } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about ZOENP Solutions — backed by Suporte Informática, a 27-year-old tech company from Brazil, now expanding excellence to Pompano Beach, FL.',
+    'Learn about ZOENP Solutions, backed by Suporte Informática, a 27-year-old tech company from Brazil now expanding excellence to Pompano Beach, FL.',
 };
 
 const TIMELINE = [
@@ -17,7 +17,7 @@ const TIMELINE = [
   { year: '2000s', event: 'Grew to serve hundreds of clients across Santa Catarina', highlight: false },
   { year: '2010s', event: 'Expanded operations to São Paulo and Paraná', highlight: false },
   { year: '2020+', event: 'Recognized as a reference in tech solutions across multiple Brazilian states', highlight: false },
-  { year: '2024', event: 'ZOENP Solutions established in Pompano Beach, FL — USA expansion begins', highlight: true },
+  { year: '2024', event: 'ZOENP Solutions established in Pompano Beach, FL, marking the start of the USA expansion', highlight: true },
 ] as const;
 
 const STATS = [
@@ -47,7 +47,7 @@ export default function AboutPage() {
           badge="Our Story"
           title="About"
           highlight="ZOENP Solutions"
-          description="From the success of Brazil to the shores of South Florida — bringing world-class technology expertise to American businesses."
+          description="From the success of Brazil to the shores of South Florida, bringing world-class technology expertise to American businesses."
         />
 
         {/* ─── Main Story ───────────────────────────────────────────────── */}
@@ -130,14 +130,14 @@ export default function AboutPage() {
 
                 <div className="flex flex-col gap-5 text-gray-400 leading-relaxed">
                   <p>
-                    <strong className="text-white font-semibold">ZOENP Solutions</strong> is arriving in the USA through the success our parent company conquered in Brazil. Located in Itajaí, Santa Catarina, our parent company — Suporte Informática — is a reference in technological solutions with{' '}
+                    <strong className="text-white font-semibold">ZOENP Solutions</strong> is arriving in the USA through the success our parent company conquered in Brazil. Located in Itajaí, Santa Catarina, our parent company, Suporte Informática, is a reference in technological solutions with{' '}
                     <strong className="text-brand-blue font-semibold">27 years in the market.</strong>
                   </p>
                   <p>
-                    We specialize in computer equipment sales, computer maintenance, notebook and printer repair, and network infrastructure support — including structured cabling and Wi-Fi deployments. Every service is backed by nearly three decades of hands-on technical expertise.
+                    We specialize in computer equipment sales, computer maintenance, notebook and printer repair, and network infrastructure support, including structured cabling and Wi-Fi deployments. Every service is backed by nearly three decades of hands-on technical expertise.
                   </p>
                   <p>
-                    Our journey of success took us beyond Santa Catarina&apos;s borders, earning the trust of clients across <strong className="text-white font-semibold">São Paulo, Paraná,</strong> and now the United States. With an experienced team passionate about technology, we are ready to meet your tech needs — offering quality products and expert technical support.
+                    Our journey of success took us beyond Santa Catarina&apos;s borders, earning the trust of clients across <strong className="text-white font-semibold">São Paulo, Paraná,</strong> and now the United States. With an experienced team passionate about technology, we are ready to meet your tech needs, offering quality products and expert technical support.
                   </p>
                   <p>
                     We understand that every client is unique. Whether you&apos;re a small business owner in need of reliable IT support, or a growing company requiring full network infrastructure, <strong className="text-white font-semibold">ZOENP Solutions</strong> is your trusted partner.
@@ -263,7 +263,7 @@ export default function AboutPage() {
                   </div>
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Founded in 1997 in Itajaí, Santa Catarina, Suporte Informática is the parent company of ZOENP Solutions.
-                    With over 27 years in the technology market, they established themselves as a regional leader in computer sales, maintenance, and IT infrastructure — serving clients across multiple Brazilian states and now expanding their proven model internationally through ZOENP Solutions.
+                    With over 27 years in the technology market, they established themselves as a regional leader in computer sales, maintenance, and IT infrastructure, serving clients across multiple Brazilian states and now expanding their proven model internationally through ZOENP Solutions.
                   </p>
                   <a
                     href={SITE.parent.url}
