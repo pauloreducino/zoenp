@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOENP Solutions — Letterhead</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    /* ── Paper ── */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    .header {
+      background: #0D1B2A;
+      padding: 0.5in 0.6in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Grid overlay */
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(30,144,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,144,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Blue bottom border of header */
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1E90FF, #4DAEFF, #1E90FF);
+    }
+
+    /* Decorative circle in header */
+    .header-circle {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid rgba(30,144,255,0.1);
+      pointer-events: none;
+    }
+    .header-circle-2 {
+      position: absolute;
+      right: -110px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(30,144,255,0.06);
+      pointer-events: none;
+    }
+
+    /* Logo block */
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1E90FF, #0066CC);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.4);
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 26px; height: 26px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #1E90FF;
+      margin-top: 3px;
+    }
+
+    /* Contact block (top right) */
+    .header-contacts {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+    .header-contact-line {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #94a3b8;
+      font-size: 10.5px;
+    }
+    .header-contact-line .dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #1E90FF;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+       DATE / RECIPIENT AREA
+    ══════════════════════════════════════ */
+    .meta-area {
+      padding: 0.45in 0.6in 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .date-line {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 0.04em;
+    }
+
+    .recipient-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .recipient-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #1E90FF;
+      margin-bottom: 4px;
+    }
+    .recipient-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0D1B2A;
+    }
+    .recipient-detail {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .subject-line {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 14px;
+      border-left: 3px solid #1E90FF;
+      background: rgba(30,144,255,0.04);
+      border-radius: 0 6px 6px 0;
+    }
+    .subject-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #1E90FF;
+      flex-shrink: 0;
+    }
+    .subject-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0D1B2A;
+    }
+
+    /* Salutation */
+    .salutation {
+      font-size: 13px;
+      color: #334155;
+      margin-top: 6px;
+    }
+
+    /* ══════════════════════════════════════
+       BODY CONTENT
+    ══════════════════════════════════════ */
+    .body-content {
+      flex: 1;
+      padding: 0.3in 0.6in;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .body-paragraph {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #475569;
+    }
+
+    /* Placeholder lines */
+    .placeholder-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 8px 0;
+    }
+    .ph-line {
+      height: 1px;
+      background: #e2e8f0;
+      border-radius: 1px;
+    }
+    .ph-line.short { width: 60%; }
+    .ph-line.medium { width: 85%; }
+    .ph-line.full { width: 100%; }
+
+    /* Signature */
+    .signature-block {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sig-closing { font-size: 12px; color: #475569; margin-bottom: 28px; }
+    .sig-line {
+      width: 140px;
+      height: 1px;
+      background: #cbd5e1;
+      margin-bottom: 4px;
+    }
+    .sig-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0D1B2A;
+    }
+    .sig-title {
+      font-size: 10px;
+      font-weight: 600;
+      color: #1E90FF;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .sig-company { font-size: 10px; color: #94a3b8; }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    .footer {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 14px 0.6in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-accent {
+      width: 3px;
+      height: 28px;
+      background: linear-gradient(180deg, #1E90FF, #4DAEFF);
+      border-radius: 2px;
+    }
+    .footer-address {
+      font-size: 8.5px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .footer-site {
+      font-size: 9px;
+      font-weight: 600;
+      color: #1E90FF;
+      letter-spacing: 0.04em;
+    }
+    .footer-contact {
+      font-size: 8.5px;
+      color: #94a3b8;
+    }
+
+    .footer-page {
+      font-size: 8px;
+      color: #cbd5e1;
+      margin-top: 2px;
+    }
+
+    /* ── Print / Screen ── */
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; width: 100%; min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page" role="document" aria-label="ZOENP Solutions Letterhead">
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-circle" aria-hidden="true"></div>
+    <div class="header-circle-2" aria-hidden="true"></div>
+
+    <!-- Logo -->
+    <div class="logo-block">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">ZOENP</span>
+        <span class="logo-sub">Solutions</span>
+      </div>
+    </div>
+
+    <!-- Contact info (top right) -->
+    <address class="header-contacts" style="font-style:normal;">
+      <div class="header-contact-line"><span class="dot"></span> (INSERT PHONE)</div>
+      <div class="header-contact-line"><span class="dot"></span> contact@zoenpsolutions.com</div>
+      <div class="header-contact-line"><span class="dot"></span> www.zoenpsolutions.com</div>
+      <div class="header-contact-line"><span class="dot"></span> @zoenpsolutions</div>
+    </address>
+  </header>
+
+  <!-- ── Date / Recipient ── -->
+  <div class="meta-area">
+    <p class="date-line">Date: <strong style="color:#334155;">______________, 2025</strong></p>
+
+    <div class="recipient-block">
+      <p class="recipient-label">To</p>
+      <p class="recipient-name">[Recipient Full Name]</p>
+      <p class="recipient-detail">
+        [Title / Position]<br />
+        [Company Name]<br />
+        [Address Line 1]<br />
+        [City, State, ZIP]
+      </p>
+    </div>
+
+    <div class="subject-line">
+      <span class="subject-label">Subject:</span>
+      <span class="subject-text">[Letter Subject — e.g., Technology Services Proposal]</span>
+    </div>
+
+    <p class="salutation">Dear [Recipient Name],</p>
+  </div>
+
+  <!-- ── Body ── -->
+  <section class="body-content" aria-label="Letter body">
+    <p class="body-paragraph">
+      We at <strong>ZOENP Solutions</strong> are pleased to present this correspondence on behalf of our company. 
+      ZOENP Solutions is a technology solutions provider based in Pompano Beach, Florida, backed by 27 years of 
+      expertise from our parent company, Suporte Informática, headquartered in Itajaí, Santa Catarina, Brazil.
+    </p>
+
+    <!-- Placeholder lines for letter body -->
+    <div class="placeholder-lines" aria-label="Letter content area">
+      <div class="ph-line full"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line medium"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line short"></div>
+    </div>
+
+    <div class="placeholder-lines">
+      <div class="ph-line full"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line medium"></div>
+      <div class="ph-line full"></div>
+      <div class="ph-line short"></div>
+    </div>
+
+    <div class="placeholder-lines">
+      <div class="ph-line full"></div>
+      <div class="ph-line medium"></div>
+    </div>
+
+    <p class="body-paragraph">
+      We look forward to establishing a long-term partnership and to serving you with the highest standards of 
+      technical expertise and customer care. Please do not hesitate to contact us at any time.
+    </p>
+
+    <!-- Signature -->
+    <div class="signature-block">
+      <p class="sig-closing">Sincerely,</p>
+      <div class="sig-line" aria-hidden="true"></div>
+      <p class="sig-name">[Your Full Name]</p>
+      <p class="sig-title">[Title — e.g., Technology Consultant]</p>
+      <p class="sig-company">ZOENP Solutions · Pompano Beach, FL</p>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-accent" aria-hidden="true"></div>
+      <address class="footer-address" style="font-style:normal;">
+        <strong style="color:#475569;">ZOENP Solutions</strong><br />
+        2335 E Atlantic BLVD 300-20, Pompano Beach, FL 33062<br />
+        contact@zoenpsolutions.com &nbsp;·&nbsp; @zoenpsolutions
+      </address>
+    </div>
+    <div class="footer-right">
+      <span class="footer-site">www.zoenpsolutions.com</span>
+      <span class="footer-contact">(INSERT PHONE)</span>
+      <span class="footer-page">Page 1 of 1</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

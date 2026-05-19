@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOENP Solutions — Business Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Print Setup ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: 3.5in 2in;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      padding: 48px 32px;
+      min-height: 100vh;
+    }
+
+    .card-set-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #64748b;
+      text-align: center;
+    }
+
+    /* ── Card base ── */
+    .card {
+      width: 3.5in;
+      height: 2in;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+       FRONT SIDE
+    ══════════════════════════════════════ */
+    .card-front {
+      background: #0D1B2A;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 24px 20px;
+    }
+
+    /* Grid overlay */
+    .card-front::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(30,144,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,144,255,0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    /* Blue accent bar top */
+    .card-front::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1E90FF, #4DAEFF, #1E90FF);
+    }
+
+    /* Logo row */
+    .front-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1E90FF, #0066CC);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(30,144,255,0.35);
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 18px; height: 18px; }
+    .logo-text-wrap { display: flex; flex-direction: column; }
+    .logo-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 7.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #1E90FF;
+      margin-top: 1px;
+    }
+
+    /* Person info */
+    .front-person {
+      position: relative;
+      z-index: 1;
+    }
+    .person-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+    .person-title {
+      font-size: 9px;
+      font-weight: 500;
+      color: #1E90FF;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Contact row */
+    .front-contacts {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
+      font-size: 8.5px;
+      font-weight: 400;
+    }
+    .contact-item .dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #1E90FF;
+      flex-shrink: 0;
+    }
+
+    /* Website bottom-right */
+    .front-site {
+      position: absolute;
+      bottom: 18px;
+      right: 20px;
+      font-size: 8px;
+      font-weight: 600;
+      color: rgba(30,144,255,0.7);
+      letter-spacing: 0.05em;
+      z-index: 1;
+    }
+
+    /* Decorative circle */
+    .front-circle {
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(30,144,255,0.08);
+      pointer-events: none;
+    }
+    .front-circle-2 {
+      position: absolute;
+      right: -55px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 1px solid rgba(30,144,255,0.05);
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════
+       BACK SIDE
+    ══════════════════════════════════════ */
+    .card-back {
+      background: linear-gradient(135deg, #0D1B2A 0%, #132338 60%, #0D1B2A 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .card-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(30,144,255,0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+    }
+
+    /* Blue corner accents */
+    .back-corner {
+      position: absolute;
+      width: 20px; height: 20px;
+      border-color: rgba(30,144,255,0.25);
+      border-style: solid;
+      border-width: 0;
+    }
+    .back-corner.tl { top: 10px; left: 10px; border-top-width: 1.5px; border-left-width: 1.5px; border-radius: 4px 0 0 0; }
+    .back-corner.tr { top: 10px; right: 10px; border-top-width: 1.5px; border-right-width: 1.5px; border-radius: 0 4px 0 0; }
+    .back-corner.bl { bottom: 10px; left: 10px; border-bottom-width: 1.5px; border-left-width: 1.5px; border-radius: 0 0 0 4px; }
+    .back-corner.br { bottom: 10px; right: 10px; border-bottom-width: 1.5px; border-right-width: 1.5px; border-radius: 0 0 4px 0; }
+
+    .back-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .back-logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1E90FF, #0066CC);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.4);
+    }
+    .back-logo-icon svg { width: 22px; height: 22px; }
+    .back-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .back-name span { color: #1E90FF; }
+    .back-tagline {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(30,144,255,0.7);
+      margin-top: -8px;
+    }
+
+    .back-divider {
+      width: 40px; height: 1px;
+      background: rgba(30,144,255,0.25);
+      position: relative; z-index: 1;
+    }
+
+    .back-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative; z-index: 1;
+    }
+    .back-info p {
+      font-size: 8px;
+      color: #64748b;
+      letter-spacing: 0.03em;
+    }
+    .back-info .back-site {
+      font-size: 9px;
+      color: rgba(30,144,255,0.8);
+      font-weight: 600;
+    }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: white; padding: 0; gap: 0; display: block; }
+      .card-set-label { display: none; }
+      .card { box-shadow: none; border-radius: 0; break-after: page; }
+      .card-front, .card-back { border-radius: 0; }
+    }
+
+    /* ── Screen preview wrapper ── */
+    .preview-hint {
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── FRONT ────────────────────────────────────────────────────────────── -->
+  <p class="card-set-label">Business Card — Front (3.5" × 2")</p>
+
+  <div class="card card-front" role="img" aria-label="ZOENP Solutions business card front">
+    <!-- Decorative circles -->
+    <div class="front-circle" aria-hidden="true"></div>
+    <div class="front-circle-2" aria-hidden="true"></div>
+
+    <!-- Logo -->
+    <div class="front-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">ZOENP</span>
+        <span class="logo-sub">Solutions</span>
+      </div>
+    </div>
+
+    <!-- Person -->
+    <div class="front-person">
+      <p class="person-name">Your Name Here</p>
+      <p class="person-title">Technology Consultant</p>
+    </div>
+
+    <!-- Contacts -->
+    <div class="front-contacts">
+      <div class="contact-item"><span class="dot"></span><span>(INSERT PHONE)</span></div>
+      <div class="contact-item"><span class="dot"></span><span>contact@zoenpsolutions.com</span></div>
+      <div class="contact-item"><span class="dot"></span><span>@zoenpsolutions</span></div>
+    </div>
+
+    <!-- Website watermark -->
+    <span class="front-site">www.zoenpsolutions.com</span>
+  </div>
+
+
+  <!-- ── BACK ─────────────────────────────────────────────────────────────── -->
+  <p class="card-set-label">Business Card — Back (3.5" × 2")</p>
+
+  <div class="card card-back" role="img" aria-label="ZOENP Solutions business card back">
+    <!-- Corner accents -->
+    <div class="back-corner tl" aria-hidden="true"></div>
+    <div class="back-corner tr" aria-hidden="true"></div>
+    <div class="back-corner bl" aria-hidden="true"></div>
+    <div class="back-corner br" aria-hidden="true"></div>
+
+    <!-- Logo -->
+    <div class="back-logo">
+      <div class="back-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <p class="back-name">ZOENP <span>Solutions</span></p>
+      <p class="back-tagline">Technology Solutions</p>
+    </div>
+
+    <div class="back-divider" aria-hidden="true"></div>
+
+    <!-- Info -->
+    <div class="back-info">
+      <p class="back-site">www.zoenpsolutions.com</p>
+      <p>2335 E Atlantic BLVD 300-20, Pompano Beach, FL 33062</p>
+      <p>@zoenpsolutions &nbsp;·&nbsp; contact@zoenpsolutions.com</p>
+    </div>
+  </div>
+
+  <p class="preview-hint">
+    To print: Open in browser → File → Print → Set paper size to 3.5" × 2" (or use a card printing service).
+    Recommended: 350 DPI minimum, matte or glossy finish.
+  </p>
+
+</body>
+</html>
