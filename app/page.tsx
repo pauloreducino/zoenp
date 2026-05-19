@@ -44,7 +44,7 @@ export default function HomePage() {
               width={1536}
               height={1024}
               priority
-              className="w-[360px] sm:w-[480px] lg:w-[580px] h-auto"
+              className="w-[460px] sm:w-[620px] lg:w-[760px] h-auto max-w-full"
             />
 
             {/* SEO heading — visually hidden since the name lives in the logo */}

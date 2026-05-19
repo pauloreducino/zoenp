@@ -26,7 +26,7 @@ export function Footer() {
                 alt="ZOENP Solutions"
                 width={180}
                 height={120}
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">

@@ -41,7 +41,7 @@ export function Navbar() {
               width={180}
               height={120}
               priority
-              className="h-20 w-auto group-hover:opacity-90 transition-opacity"
+              className="h-12 w-auto group-hover:opacity-90 transition-opacity"
             />
           </Link>
 
